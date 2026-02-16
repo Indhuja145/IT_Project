@@ -1,0 +1,128 @@
+/* Main Container */
+.document-container {
+  padding: 30px;
+  background-color: #c9bbbb;
+  min-height: 100vh;
+}
+
+/* Title */
+.document-title {
+  text-align: center;
+  color: green;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* Table Card */
+.table-wrapper {
+  background-color: #8f7f7f;
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17px;
+  background-color: white;
+}
+
+th {
+  background-color: green;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Download Button */
+.download-btn {
+  background-color: green;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.download-btn:hover {
+  background-color: darkgreen;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* Form Section */
+.form-section {
+  background-color: #8f7f7f;
+  padding: 35px;
+  border-radius: 16px;
+  width: 60%;
+  margin: auto;
+}
+
+/* Form Title */
+.form-section h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Form Layout */
+.document-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Inputs */
+.document-form input,
+.document-form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  width: 220px;
+  outline: none;
+}
+
+/* Upload Button */
+.submit-btn {
+  margin-top: 10px;
+  padding: 12px 25px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: darkgreen;
+}
+
+.button-center {
+  width: 100%;
+  text-align: center;
+}

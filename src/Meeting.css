@@ -1,0 +1,108 @@
+/* Main Container */
+.meeting-container {
+  padding: 30px;
+  background-color: #bfb2b2;   /* soft background like your screenshot */
+  min-height: 100vh;
+}
+
+/* Center Title */
+.meeting-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* Table Section */
+.table-wrapper {
+  background: #8d7f7f;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;   /* slightly bigger text */
+  background-color: white;
+}
+
+th {
+  background-color: green;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* Form Section */
+.form-section {
+  background-color: #8d7f7f;
+  padding: 40px;
+  border-radius: 20px;
+  width: 60%;
+  margin: auto;   /* center form */
+  text-align: center;
+}
+
+.form-section h2 {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 26px;
+}
+
+/* Form Layout */
+.meeting-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.meeting-form input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Add Button */
+.submit-btn {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: darkgreen;
+}
+
+.button-center {
+  width: 100%;
+  margin-top: 15px;
+}

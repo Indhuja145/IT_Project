@@ -1,0 +1,131 @@
+/* ===== PAGE ===== */
+.user-container {
+  min-height: 100vh;
+  background-color: #cbbcbc;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== TOP SECTION ===== */
+.top-section {
+  position: relative;
+  margin-bottom: 30px;
+  height: 50px;
+}
+
+.top-section h1 {
+  text-align: center;
+  color: #0a7a0a;
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Search stays top right */
+.search-bar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 230px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #0a7a0a;
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+  background-color: #8d7d7d;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+thead {
+  background-color: #0a7a0a;
+  color: white;
+}
+
+th {
+  padding: 12px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;   /* Proper vertical + horizontal lines */
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f2f2f2;
+  transition: 0.2s ease;
+}
+
+/* ===== FORM ===== */
+.form-section {
+  background-color: #8d7d7d;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;      /* Smaller width */
+  margin: auto;          /* Center form */
+  color: white;
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Form Grid */
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 columns */
+  gap: 18px;
+}
+
+/* Inputs */
+.user-form input {
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Button Centered */
+.button-center {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Button */
+.submit-btn {
+  background-color: #0a7a0a;
+  color: white;
+  padding: 9px 40px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #066306;
+}
