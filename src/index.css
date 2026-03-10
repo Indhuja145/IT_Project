@@ -1,63 +1,72 @@
+:root {
+  /* Primary Colors - Black & Violet */
+  --primary-black: #000000;
+  --primary-violet: #8b5cf6;
+  --primary-violet-dark: #7c3aed;
+  --primary-violet-light: #a78bfa;
+  
+  /* Secondary Colors */
+  --secondary-purple: #764ba2;
+  --secondary-pink: #ec4899;
+  
+  /* Background Colors */
+  --bg-dark: #0a0a0a;
+  --bg-card: rgba(20, 20, 20, 0.95);
+  --bg-hover: rgba(139, 92, 246, 0.1);
+  
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-gray: #9ca3af;
+  --text-light: #d1d5db;
+  
+  /* Border Colors */
+  --border-violet: rgba(139, 92, 246, 0.3);
+  --border-light: rgba(139, 92, 246, 0.5);
+  
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  
+  /* Shadow */
+  --shadow-violet: 0 4px 20px rgba(139, 92, 246, 0.3);
+  --shadow-violet-lg: 0 10px 40px rgba(139, 92, 246, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
 body {
-  height: 100vh;
-  background-color: #c9bbbb;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--primary-black);
+  color: var(--text-white);
+  overflow-x: hidden;
 }
 
-/* MAIN CONTAINER */
-.login-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-/* TITLE */
-.title {
-  color: green;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 25px;
-  text-align: center;
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
 }
 
-/* CARD */
-.login-form {
-  background-color: #8f7f7f;
-  width: 380px;
-  padding: 30px;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+::-webkit-scrollbar-thumb {
+  background: var(--primary-violet);
+  border-radius: 5px;
 }
 
-/* INPUTS */
-.login-form input {
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-  outline: none;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-violet-dark);
 }
 
-/* BUTTON */
-.login-form button {
-  margin-top: 10px;
-  padding: 12px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.login-form button:hover {
-  background-color: darkgreen;
+/* Selection */
+::selection {
+  background: var(--primary-violet);
+  color: var(--text-white);
 }
