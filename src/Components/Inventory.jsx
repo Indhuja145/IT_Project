@@ -12,6 +12,8 @@ export default function Inventory() {
   const [category, setCategory] = useState("");
   const [quantity, setQuantity] = useState("");
   const [addedBy, setAddedBy] = useState("");
+  const [assignedTo, setAssignedTo] = useState("Unassigned");
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
@@ -20,11 +22,21 @@ export default function Inventory() {
 
   useEffect(() => {
     fetchItems();
+    fetchUsers();
   }, []);
 
   const showNotification = (message, type = "success") => {
     setNotification({ show: true, message, type });
     setTimeout(() => setNotification({ show: false, message: "", type: "" }), 3000);
+  };
+
+  const fetchUsers = async () => {
+    try {
+      const res = await axios.get(`${apiUrl}/users`);
+      setUsers(res.data);
+    } catch (err) {
+      console.error('Failed to fetch users', err);
+    }
   };
 
   const fetchItems = async () => {
@@ -50,7 +62,8 @@ export default function Inventory() {
           itemName,
           category,
           quantity,
-          addedBy
+          addedBy,
+          assignedTo
         }, { headers: getAuthHeaders() });
         showNotification("Item updated successfully");
         setEditingId(null);
@@ -59,7 +72,8 @@ export default function Inventory() {
           itemName,
           category,
           quantity,
-          addedBy
+          addedBy,
+          assignedTo
         }, { headers: getAuthHeaders() });
         showNotification("Item added successfully");
       }
@@ -67,6 +81,7 @@ export default function Inventory() {
       setCategory("");
       setQuantity("");
       setAddedBy("");
+      setAssignedTo("Unassigned");
       fetchItems();
     } catch (err) {
       showNotification("Operation failed. Please try again.", "error");
@@ -81,6 +96,7 @@ export default function Inventory() {
     setCategory(item.category);
     setQuantity(item.quantity);
     setAddedBy(item.addedBy);
+    setAssignedTo(item.assignedTo || "Unassigned");
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   };
 
@@ -90,6 +106,7 @@ export default function Inventory() {
     setCategory("");
     setQuantity("");
     setAddedBy("");
+    setAssignedTo("Unassigned");
   };
 
   const handleDelete = async (id) => {
@@ -109,7 +126,8 @@ export default function Inventory() {
   const filteredItems = items.filter((item) =>
     item.itemName?.toLowerCase().includes(search.toLowerCase()) ||
     item.category?.toLowerCase().includes(search.toLowerCase()) ||
-    item.addedBy?.toLowerCase().includes(search.toLowerCase())
+    item.addedBy?.toLowerCase().includes(search.toLowerCase()) ||
+    item.assignedTo?.toLowerCase().includes(search.toLowerCase())
   );
 
   const getStatusBadge = (quantity) => {
@@ -176,6 +194,7 @@ export default function Inventory() {
               <th>Quantity</th>
               <th>Status</th>
               <th>Added By</th>
+              <th>Assigned To</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -183,7 +202,7 @@ export default function Inventory() {
             <AnimatePresence>
               {filteredItems.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="no-data">No items found</td>
+                  <td colSpan="7" className="no-data">No items found</td>
                 </tr>
               ) : (
                 filteredItems.map((item, index) => (
@@ -200,6 +219,7 @@ export default function Inventory() {
                     <td className="quantity">{item.quantity}</td>
                     <td>{getStatusBadge(item.quantity)}</td>
                     <td>{item.addedBy}</td>
+                    <td>{item.assignedTo || 'Unassigned'}</td>
                     <td>
                       <div className="action-buttons">
                         <motion.button 
@@ -285,6 +305,19 @@ export default function Inventory() {
             disabled={loading}
             whileFocus={{ scale: 1.02 }}
           />
+
+          <motion.select
+            value={assignedTo}
+            onChange={(e) => setAssignedTo(e.target.value)}
+            required
+            disabled={loading}
+            whileFocus={{ scale: 1.02 }}
+          >
+            <option value="Unassigned">Unassigned</option>
+            {users.map(user => (
+              <option key={user._id} value={user.email}>{user.name} ({user.email})</option>
+            ))}
+          </motion.select>
 
           <div className="form-buttons">
             <motion.button 

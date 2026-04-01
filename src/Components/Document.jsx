@@ -115,7 +115,12 @@ function Document() {
         </div>
       )}
 
-      <h1 className="document-title">📄 Document Management</h1>
+      <div className="page-header">
+        <div>
+          <h1>Document Management</h1>
+          <p>Upload and manage organizational documents</p>
+        </div>
+      </div>
 
       <div className="table-wrapper">
         {loading && <div className="loading-spinner">Loading...</div>}
@@ -150,7 +155,7 @@ function Document() {
                       rel="noopener noreferrer"
                       className="download-btn"
                     >
-                      ⬇️ Download
+                      Download
                     </a>
                   </td>
                   <td>
@@ -159,7 +164,7 @@ function Document() {
                       onClick={() => handleDelete(doc._id)}
                       disabled={loading}
                     >
-                      🗑️ Delete
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -170,7 +175,7 @@ function Document() {
       </div>
 
       <div className="form-section">
-        <h2>⬆️ Upload Document</h2>
+        <h2>Upload Document</h2>
 
         <form onSubmit={handleSubmit} className="document-form">
 
