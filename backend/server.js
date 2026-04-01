@@ -10,6 +10,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
+  'https://it-project-gqoq-fz6rq7yy1-indhujas-projects-5f196112.vercel.app',
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
