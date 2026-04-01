@@ -1,0 +1,6 @@
+@echo off
+echo 🔄 Restarting Backend Server...
+cd /d "%~dp0backend"
+
+echo ✅ Starting server with DELETE endpoint...
+node server.js
